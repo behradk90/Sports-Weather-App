@@ -25,13 +25,6 @@ const weatherSlice = createSlice({
     },
 });
 
-export const {
-    setTemperature,
-    setForecast,
-    setWindVelocity,
-    setCondition,
-} = weatherSlice.actions;
-
 export const fetchWeatherData = () => async (dispatch) => {
     try {
         const response = await axios.get('https://api.weatherapi.com/v1/e2aca790b1144612b83110848232105');
@@ -45,5 +38,12 @@ export const fetchWeatherData = () => async (dispatch) => {
         console.log('Error fetching weather data:', error);
     }
 };
+
+export const {
+    setTemperature,
+    setForecast,
+    setWindVelocity,
+    setCondition,
+} = weatherSlice.actions;
 
 export default weatherSlice.reducer;
