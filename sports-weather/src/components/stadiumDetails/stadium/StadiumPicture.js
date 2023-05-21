@@ -8,3 +8,5 @@ function StadiumPicture() {
         </div>
     )
 }
+
+export default StadiumPicture;

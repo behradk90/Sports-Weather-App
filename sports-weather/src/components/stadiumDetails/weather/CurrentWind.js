@@ -7,3 +7,5 @@ function CurrentWind() {
         </div>
     )
 }
+
+export default CurrentWind;

@@ -6,3 +6,5 @@ function CurrentTemprature() {
         </div>
     )
 }
+
+export default CurrentTemprature;
