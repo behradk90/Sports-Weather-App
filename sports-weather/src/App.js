@@ -1,17 +1,16 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-import MainSearchPage from './components/mainPage/mainSearchPage';
-import StadiumDetails from './components/stadiumDetails/stadiumDetails';
+import MainSearchPage from './components/mainPage/MainSearchPage';
+import StadiumDetails from './components/stadiumDetails/StadiumDetails';
 
 function App() {
   return (
     <Router>
       <div>
         <Routes>
-          <Route path='/' element={MainSearchPage} />
-          <Route path='/stadium-details/:id' element={StadiumDetails} />
+          <Route path='/' element={<MainSearchPage />} />
+          <Route path='' element={<StadiumDetails />} />
         </Routes>
       </div>
     </Router>
