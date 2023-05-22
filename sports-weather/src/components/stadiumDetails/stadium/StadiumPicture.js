@@ -1,12 +1,14 @@
-function StadiumPicture() {
+import React from 'react';
+
+function StadiumPicture({ image }) {
     return (
         <div>
             <img
-                src=""
-                alt=""
+                src={image}
+                alt="Stadium Picture"
             />
         </div>
-    )
+    );
 }
 
 export default StadiumPicture;

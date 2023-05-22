@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWeatherData } from '../../../redux/features/weatherSlice';
 
-function CurrentWind() {
+function CurrentWind({ location }) {
     const dispatch = useDispatch();
-    const location = 'london'
 
     useEffect(() => {
         dispatch(fetchWeatherData(location));

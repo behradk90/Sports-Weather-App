@@ -18,7 +18,7 @@ function CitySelect({ onCityChange }) {
         <div>
             <label htmlFor="city">Select City:</label>
             <select id="city" onChange={handleCityChange}>
-                <option value="">All Cities</option>
+                <option value="">All</option>
                 {cities.map(city => (
                     <option key={city} value={city}>
                         {city}
