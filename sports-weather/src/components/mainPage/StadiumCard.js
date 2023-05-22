@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 
 function StadiumCard({ stadium }) {
-    const { name, location, imageUrl } = stadium;
+    const { name, imageUrl } = stadium;
 
     return (
-        <Link to={`/stadium/${stadium.id}/${stadium.name.replace(/ /g, '_')}`}>
-            <div className="stadium-card">
+        <div className="stadium-card">
+            <Link to={`/stadium/${stadium.id}/${stadium.name.replace(/ /g, '_')}`}>
                 <img src={imageUrl} alt={name} />
                 <h3>{name}</h3>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 }
 

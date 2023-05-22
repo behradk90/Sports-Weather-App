@@ -5,7 +5,6 @@ import ukFootballStadiums from "../../APIs/stadiumAPI";
 
 import { Link } from "react-router-dom";
 
-import StadiumName from "./stadium/StadiumName";
 import StadiumPicture from './stadium/StadiumPicture'
 import CurrentWind from './weather/CurrentWind'
 import CurrentForecast from './weather/CurrentForecast'
@@ -19,12 +18,10 @@ function StadiumDetails() {
 
     const { name, imageUrl, location } = stadium;
 
-    console.log(id)
     return (
         <div>
-            <Link to={'/'}>Back to Search</Link>
-            <StadiumName name={name} />
-            <StadiumPicture image={imageUrl} />
+            <Link to={'/'} >Search</Link>
+            <StadiumPicture image={imageUrl} name={name} />
             <CurrentTemp location={location} />
             <CurrentForecast location={location} />
             <CurrentWind location={location} />

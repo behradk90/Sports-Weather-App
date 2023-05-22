@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+
 import TempratureRange from "./TempratureRange";
 import CitiesSelect from "./CitiesSelect";
 import Conditions from "./Conditions";
@@ -14,7 +15,6 @@ function MainSearchPage() {
 
     return (
         <div>
-            <h1>Stadium Weather App</h1>
             <CitiesSelect onCityChange={handleCityChange} />
             <StadiumList selectedCity={selectedCity} />
             <section>
