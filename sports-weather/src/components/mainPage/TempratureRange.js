@@ -8,8 +8,10 @@ function TemperatureRange() {
     };
 
     return (
-        <div>
-            <label htmlFor="temperature-range">Select Temperature Range:</label>
+        <div className="flex items-center mb-4">
+            <label htmlFor="temperature-range" className="mr-2 text-gray-700 dark:text-gray-300">
+                Select Temperature Range:
+            </label>
             <input
                 type="range"
                 id="temperature-range"
@@ -18,8 +20,9 @@ function TemperatureRange() {
                 step="1"
                 value={temperatureRange}
                 onChange={handleRangeChange}
+                className="w-full"
             />
-            <span>{temperatureRange}°C</span>
+            <span className="ml-2 text-gray-700 dark:text-gray-300">{temperatureRange}°C</span>
         </div>
     );
 }
