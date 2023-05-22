@@ -1,3 +1,5 @@
+// Would have preferred to accessed the wikipediAPI properly for a larger and more dynamic data pool: time constraints
+
 const ukFootballStadiums = [
     {
         name: 'Wembley Stadium',
