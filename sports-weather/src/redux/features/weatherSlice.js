@@ -19,8 +19,10 @@ const weatherSlice = createSlice({
         setWindVelocity: (state, action) => {
             state.windVelocity = action.payload;
         },
-        setCondition: (state, action) => {
-            state.condition = action.payload;
+        setConditionData: (state, action) => {
+            const { text, icon } = action.payload;
+            state.conditionText = text;
+            state.conditionIcon = icon;
         },
     },
 });
@@ -33,19 +35,13 @@ export const fetchWeatherData = (location) => async (dispatch) => {
         const { current } = weatherResponse.data;
         const { forecast } = forecastResponse.data;
 
-        setTimeout(() => {
-            dispatch(setForecast(forecast));
-        }, 3 * 60 * 60 * 1000);
-        setTimeout(() => {
-            dispatch(setTemperature(current.temp_c));
-        }, 5 * 60 * 1000);
-        setTimeout(() => {
-            dispatch(setWindVelocity(current.wind_mph));
-        }, 5 * 60 * 1000);
-        setTimeout(() => {
-            dispatch(setCondition(current.condition.text));
-        }, 30 * 60 * 1000);
-
+        dispatch(setForecast(forecast.forecastday.hour));
+        dispatch(setTemperature(current.temp_c));
+        dispatch(setConditionData({
+            text: current.condition.text,
+            icon: current.condition.icon,
+        }));
+        dispatch(setWindVelocity(current.wind_mph));
     } catch (error) {
         console.log('Error fetching weather data:', error);
     }
@@ -55,7 +51,7 @@ export const {
     setTemperature,
     setForecast,
     setWindVelocity,
-    setCondition,
+    setConditionData,
 } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

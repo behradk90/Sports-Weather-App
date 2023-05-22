@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StadiumPicture({ name, image }) {
+function StadiumInfo({ name, image }) {
     const placeholderImage = 'https://i0.wp.com/theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png?fit=1200%2C800&ssl=1';
 
     return (
@@ -15,4 +15,4 @@ function StadiumPicture({ name, image }) {
     );
 }
 
-export default StadiumPicture;
+export default StadiumInfo;
