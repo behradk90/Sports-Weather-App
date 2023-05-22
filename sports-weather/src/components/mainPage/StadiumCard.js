@@ -1,22 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
-const StadiumCard = (props) => {
-    const stadium = props.stadium;
+function StadiumCard({ stadium }) {
+    const { name, location, imageUrl } = stadium;
 
     return (
-        <div className="">
-            <img
-                src=""
-                alt=""
-                height={200}
-            />
-            <div className="desc">
-                <h2>
-                    <Link to={''}>{stadium.name}</Link>
-                </h2>
-            </div>
+        <div className="stadium-card">
+            <img src={imageUrl} alt={name} />
+            <h3>{name}</h3>
         </div>
-    )
-};
+    );
+}
+
 export default StadiumCard;
