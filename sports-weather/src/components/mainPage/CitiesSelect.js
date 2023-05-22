@@ -25,7 +25,7 @@ function CitySelect({ onCityChange }) {
                 {cities.map((city) => (
                     <option key={city} value={city}>
                         {city}
-                        {/* Add additional content here if needed */}
+                        {getStadiumCount(city)}
                     </option>
                 ))}
             </select>

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWeatherData } from '../../../redux/features/weatherSlice';
 
+
+// Component left until I can discern what amount of forecast the challenge required
 function CurrentForecast({ location }) {
     const dispatch = useDispatch();
 

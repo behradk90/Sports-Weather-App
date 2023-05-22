@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// Functionality required more time to tool the filtering logic
 function TemperatureRange() {
     const [temperatureRange, setTemperatureRange] = useState("");
 
@@ -10,7 +11,7 @@ function TemperatureRange() {
     return (
         <div className="flex items-center mb-4">
             <label htmlFor="temperature-range" className="mr-2 text-gray-700 dark:text-gray-300">
-                Select Temperature Range:
+                Temperature:
             </label>
             <input
                 type="range"

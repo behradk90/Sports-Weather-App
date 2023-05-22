@@ -2,6 +2,8 @@ import React from 'react';
 import { setConditionData } from '../../redux/features/weatherSlice';
 import ukFootballStadiums from '../../APIs/stadiumAPI';
 
+
+// Functionality required more time to tool the filtering logic
 function Conditions({ onConditionChange }) {
     const conditions = ['sunny', 'partly cloudy', 'cloudy', 'raining'];
 
