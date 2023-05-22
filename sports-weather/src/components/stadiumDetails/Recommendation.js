@@ -7,7 +7,8 @@ import { GiphyFetch } from '@giphy/js-fetch-api'
 
 function Recommendation({ location }) {
     const dispatch = useDispatch();
-    const gf = new GiphyFetch('B9X0Gl3rxJ97pVSevIvVxAtDbdlv5DzZ');
+    const gifyAPI = process.env.REACT_APP_GIPHY_API_KEY
+    const gf = new GiphyFetch(gifyAPI);
 
 
     useEffect(() => {
@@ -59,7 +60,7 @@ function Recommendation({ location }) {
             <div className='mt-auto'>
                 <h2 className='font-normal text-gray-700 dark:text-gray-400'>Recommended Clothing</h2>
                 <h1 className='mb-2 text-8xl tracking-tight text-gray-900 dark:text-white'>{recommended}</h1>
-                <div className="mt-14">
+                <div className="mt-10">
                     <Grid className='' width={800} columns={1} gutter={10} fetchGifs={fetchGifs} key={recommended} />
                 </div>
             </div>
