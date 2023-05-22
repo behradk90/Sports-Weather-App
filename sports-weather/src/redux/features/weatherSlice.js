@@ -25,15 +25,18 @@ const weatherSlice = createSlice({
     },
 });
 
-export const fetchWeatherData = () => async (dispatch) => {
+export const fetchWeatherData = (location) => async (dispatch) => {
     try {
-        const response = await axios.get('https://api.weatherapi.com/v1/e2aca790b1144612b83110848232105');
-        const { temperature, forecast, wind_velocity, condition } = response.data;
+        const weatherResponse = await axios.get(`https://api.weatherapi.com/v1/current.json?key=e2aca790b1144612b83110848232105&q=${location}&aqi=no`);
+        const forecastResponse = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=e2aca790b1144612b83110848232105&q=${location}&days=1&aqi=no&alerts=no`)
 
-        dispatch(setTemperature(temperature));
-        dispatch(setForecast(forecast));
-        dispatch(setWindVelocity(wind_velocity));
-        dispatch(setCondition(condition));
+        const { current, location: { name } } = weatherResponse.data;
+        const { forecast } = forecastResponse.data;
+
+        dispatch(setForecast(current.));
+        dispatch(setTemperature(current.temp_c));
+        dispatch(setCondition(current.condition.text));
+        dispatch(setWindVelocity(current.wind_kph));
     } catch (error) {
         console.log('Error fetching weather data:', error);
     }
