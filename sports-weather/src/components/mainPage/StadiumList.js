@@ -12,7 +12,7 @@ function StadiumList({ selectedCity, condition }) {
         : filteredStadiums;
 
     return (
-        <div className="stadium-list">
+        <div className="grid grid-cols-3 gap-4">
             {filteredStadiumsWithCondition.map(stadium => (
                 <StadiumCard key={stadium.name} stadium={stadium} />
             ))}

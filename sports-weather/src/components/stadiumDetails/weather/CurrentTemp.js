@@ -12,9 +12,11 @@ function CurrentTemprature({ location }) {
     const temperature = useSelector((state) => state.weather.temperature);
 
     return (
-        <div>
-            <h1>{temperature}</h1>
-            <h2>Current Temperature</h2>
+        <div className='block text-center max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col'>
+            <div className='mt-auto'>
+                <h1 className='mb-2 text-9xl tracking-tight text-gray-900 dark:text-white'>{temperature}</h1>
+                <h2 className='font-normal text-gray-700 dark:text-gray-400'>Current Temperature</h2>
+            </div>
         </div>
     )
 }

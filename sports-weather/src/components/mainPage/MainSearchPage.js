@@ -23,10 +23,12 @@ function MainSearchPage() {
 
 
     return (
-        <div>
-            <CitiesSelect onCityChange={handleCityChange} />
-            <TempratureRange />
-            <Conditions onConditionChange={handleConditionChange} />
+        <div className="space-y-4">
+            <div className="flex space-x-4">
+                <CitiesSelect onCityChange={handleCityChange} />
+                <TempratureRange />
+                <Conditions onConditionChange={handleConditionChange} />
+            </div>
             <StadiumList
                 selectedCity={selectedCity}
             // condition={condition}
