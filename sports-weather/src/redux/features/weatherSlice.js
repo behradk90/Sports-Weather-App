@@ -36,6 +36,7 @@ export const fetchWeatherData = (location) => async (dispatch) => {
         dispatch(setForecast(forecast));
         dispatch(setTemperature(current.temp_c));
         dispatch(setCondition(current.condition.text));
+        // dispatch(setCondition(current.condition.icon));
         dispatch(setWindVelocity(current.wind_mph));
     } catch (error) {
         console.log('Error fetching weather data:', error);

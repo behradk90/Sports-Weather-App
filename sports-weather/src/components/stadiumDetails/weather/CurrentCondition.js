@@ -14,6 +14,7 @@ function CurrentTemprature() {
 
     return (
         <div>
+            <img src="" alt="" />
             <h1>{condition}</h1>
             <h2>Current Condtion</h2>
         </div>

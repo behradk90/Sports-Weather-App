@@ -16,7 +16,6 @@ function CurrentWind() {
         <div>
             <h1>{windVelocity}</h1>
             <h2>Wind (mph)</h2>
-            <h2></h2>
         </div>
     )
 }

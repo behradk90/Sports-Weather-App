@@ -10,7 +10,6 @@ function MainSearchPage() {
             <h1>Stadium Weather App</h1>
 
             <section>
-
             </section>
         </div>
     )
