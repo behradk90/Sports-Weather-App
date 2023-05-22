@@ -33,11 +33,19 @@ export const fetchWeatherData = (location) => async (dispatch) => {
         const { current } = weatherResponse.data;
         const { forecast } = forecastResponse.data;
 
-        dispatch(setForecast(forecast));
-        dispatch(setTemperature(current.temp_c));
-        dispatch(setCondition(current.condition.text));
-        // dispatch(setCondition(current.condition.icon));
-        dispatch(setWindVelocity(current.wind_mph));
+        setTimeout(() => {
+            dispatch(setForecast(forecast));
+        }, 3 * 60 * 60 * 1000);
+        setTimeout(() => {
+            dispatch(setTemperature(current.temp_c));
+        }, 5 * 60 * 1000);
+        setTimeout(() => {
+            dispatch(setWindVelocity(current.wind_mph));
+        }, 5 * 60 * 1000);
+        setTimeout(() => {
+            dispatch(setCondition(current.condition.text));
+        }, 30 * 60 * 1000);
+
     } catch (error) {
         console.log('Error fetching weather data:', error);
     }
