@@ -25,7 +25,7 @@ function StadiumDetails() {
                 <h1 className="p-4 mb-4 text-3xl text-center text-gray-900 dark:text-white md:text-5xl lg:text-4xl">{name}</h1>
                 <Link to={'/'} className="mb-4 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 self-center">Search</Link>
             </div>
-            <div className="flex space-x-4 mt-12">
+            <div className="flex space-x-4 mt-2">
                 <StadiumInfo image={imageUrl} name={name} location={location} />
                 <CurrentTemp location={location} />
                 {/* <CurrentForecast location={location} /> */}
