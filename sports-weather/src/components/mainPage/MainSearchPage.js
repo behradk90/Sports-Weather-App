@@ -24,7 +24,7 @@ function MainSearchPage() {
 
     return (
         <div className="space-y-4">
-            <h1 className="p-4 mb-4 text-3xl text-center font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            <h1 className="p-4 mb-4 text-3xl text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
                 Stadium Weather App
             </h1>
             <div className="flex space-x-10">

@@ -1,25 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
+import ukFootballStadiums from '../../APIs/stadiumAPI';
+
+const initialState = [...ukFootballStadiums];
 
 const stadiumSlice = createSlice({
     name: 'stadiums',
-    initialState: [],
+    initialState,
     reducers: {
-        addTemperatureData(state, action) {
+        setTemperatureData: (state, action) => {
             const { stadiumId, temperatureData } = action.payload;
             const stadium = state.find((stadium) => stadium.id === stadiumId);
             if (stadium) {
-                stadium.temperatureData = temperatureData;
+                stadium.setTemperatureData = temperatureData;
             }
         },
-        addWeatherCondition(state, action) {
-            const { stadiumId, weatherCondition } = action.payload;
+        setConditionData: (state, action) => {
+            const { stadiumId, conditionData } = action.payload;
             const stadium = state.find((stadium) => stadium.id === stadiumId);
             if (stadium) {
-                stadium.weatherCondition = weatherCondition;
+                stadium.setConditionData = conditionData;
             }
         },
     },
 });
 
-export const { addTemperatureData, addWeatherCondition } = stadiumSlice.actions;
+export const { setTemperatureData, setConditionData } = stadiumSlice.actions;
+
 export default stadiumSlice.reducer;

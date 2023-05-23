@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useSelectorm, useDispatch } from "react-redux";
+import { addTemperatureData, addWeatherCondition } from "../../redux/features/stadiumSlice";
+import { fetchWeatherData } from "../../redux/features/weatherSlice";
 
-// Functionality required more time to tool the filtering logic
+import ukFootballStadiums from "../../APIs/stadiumAPI";
+
 function TemperatureRange() {
     const [temperatureRange, setTemperatureRange] = useState("");
 
