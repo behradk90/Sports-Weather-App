@@ -17,7 +17,7 @@ function TemperatureRange() {
                 type="range"
                 id="temperature-range"
                 min="0"
-                max="40"
+                max="50"
                 step="1"
                 value={temperatureRange}
                 onChange={handleRangeChange}
