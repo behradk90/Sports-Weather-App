@@ -42,8 +42,10 @@ function TemperatureRange({ onTemperatureChange }) {
             }
         }
         // produces an empty array
+        return results;
         // console.log(results);
-        // use the array of results to then filter the ukFootballStadiums array
+        // use the array of results to then filter the 
+        // ukFootballStadiums array
 
     };
 

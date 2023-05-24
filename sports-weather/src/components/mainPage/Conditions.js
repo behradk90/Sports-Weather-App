@@ -21,8 +21,19 @@ function Conditions({ onConditionChange }) {
         });
     };
 
+    // Key function for filtering by weather conditions
+    // see also: TempratureRange 
     const conditionChanger = () => {
-        console.log(conditionChange);
+        if (conditionChange) {
+            const filteredStadiums = ukFootballStadiums.filter((stadium) => {
+                const location = stadium.location.toLowerCase();
+                const condition = weatherData[location]?.conditionText.toLowerCase();
+                return condition === conditionChange;
+            });
+            // returns empty array breaking the list
+            onConditionChange(filteredStadiums);
+            console.log(filteredStadiums)
+        }
     };
 
     const handleConditionChange = (event) => {
