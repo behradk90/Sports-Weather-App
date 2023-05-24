@@ -11,6 +11,9 @@ const weatherSlice = createSlice({
         conditionIcon: null,
     },
     reducers: {
+        setLocation: (state, action) => {
+            state.location = action.payload;
+        },
         setTemperature: (state, action) => {
             state.temperature = action.payload;
         },
@@ -32,12 +35,13 @@ export const fetchWeatherData = (location) => async (dispatch) => {
     try {
         const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
         const weatherResponse = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${location}&aqi=no`);
-        const forecastResponse = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=1&aqi=no&alerts=no`)
+        const forecastResponse = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=2&aqi=no&alerts=no`)
 
         const { current } = weatherResponse.data;
         const { forecast } = forecastResponse.data;
 
-        dispatch(setForecast(forecast.forecastday.hour));
+        dispatch(setLocation(current.location));
+        dispatch(setForecast(forecast.forecastday[1]));
         dispatch(setTemperature(current.temp_c));
         dispatch(setConditionData({
             text: current.condition.text,
@@ -50,6 +54,7 @@ export const fetchWeatherData = (location) => async (dispatch) => {
 };
 
 export const {
+    setLocation,
     setTemperature,
     setForecast,
     setWindVelocity,

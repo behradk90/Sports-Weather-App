@@ -7,7 +7,7 @@ import StadiumDetails from './components/stadiumDetails/StadiumDetails';
 function App() {
   return (
     <Router>
-      <div className="dark:bg-gray-800 dark:text-gray-200 min-h-screen flex justify-center">
+      <div className="max-w-full dark:bg-gray-800 dark:text-gray-200 min-h-screen flex justify-center">
         <div className='max-w-screen-lg'>
           <Routes>
             <Route path='/' element={<MainSearchPage />} />

@@ -27,6 +27,7 @@ function Recommendation({ location }) {
             return 'T Shirt';
         }
         if (
+            t < 25 &&
             t > 17 &&
             t < 25 &&
             w > 10 &&

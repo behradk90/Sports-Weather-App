@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setConditionData } from "../../redux/features/weatherSlice";
 
 import TempratureRange from "./TempratureRange";
 import CitiesSelect from "./CitiesSelect";
@@ -11,7 +9,7 @@ import StadiumList from "./StadiumList";
 function MainSearchPage() {
     const [selectedCity, setSelectedCity] = useState('');
     const [condition, setCondtion] = useState('');
-    const dispatch = useDispatch();
+    const [temperature, setTemperature] = useState('');
 
     const handleCityChange = city => {
         setSelectedCity(city);
@@ -21,6 +19,9 @@ function MainSearchPage() {
         setCondtion(condition)
     }
 
+    const handleTemperatureChange = temp => {
+        setTemperature(temp)
+    }
 
     return (
         <div className="space-y-4">
@@ -29,12 +30,13 @@ function MainSearchPage() {
             </h1>
             <div className="flex space-x-10">
                 <CitiesSelect onCityChange={handleCityChange} />
-                <TempratureRange />
+                <TempratureRange onTempratureChange={handleTemperatureChange} />
                 <Conditions onConditionChange={handleConditionChange} />
             </div>
             <StadiumList
                 selectedCity={selectedCity}
-            // condition={condition}
+                condition={condition}
+                temprature={temperature}
             />
             <section>
             </section>
